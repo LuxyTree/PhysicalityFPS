@@ -29,19 +29,24 @@ public class CrosshairScript : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
         {
             greenCrosshair.SetActive(true);
+            IndicatorDown.SetActive(true);
         }
         else
         {
             greenCrosshair.SetActive(false);
+            IndicatorDown.SetActive(false);
+
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             blueCrosshair.SetActive(true);
+            IndicatorRight.SetActive(true);
         }
         else
         {
             blueCrosshair.SetActive(false);
+            IndicatorRight.SetActive(false);
         }
 
     }
