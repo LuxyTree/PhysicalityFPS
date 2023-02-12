@@ -7,6 +7,10 @@ public class CrosshairScript : MonoBehaviour
     public GameObject redCrosshair;
     public GameObject greenCrosshair;
     public GameObject blueCrosshair;
+    public GameObject IndicatorLeft;
+    public GameObject IndicatorDown;
+    public GameObject IndicatorRight;
+
 
     // Update is called once per frame
     void Update()
@@ -14,10 +18,12 @@ public class CrosshairScript : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             redCrosshair.SetActive(true);
+            IndicatorLeft.SetActive(true);
         }
         else
         {
             redCrosshair.SetActive(false);
+            IndicatorLeft.SetActive(false);
         }
 
         if (Input.GetKey(KeyCode.S))
