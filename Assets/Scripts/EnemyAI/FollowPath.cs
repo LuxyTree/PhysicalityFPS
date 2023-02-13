@@ -4,34 +4,21 @@ using UnityEngine;
 
 public class FollowPath : MonoBehaviour
 {
-    [SerializeField]
-    private Transform[] waypoints;
+    public Transform[] points;
+    int current;
+    public float speed;
 
-    [SerializeField]
-    private float moveSpeed = 2f;
-
-    private int waypointIndex = 0;
-
-    private void Start()
+    void Start()
     {
-        transform.position = waypoints[waypointIndex].transform.position;
+        current = 0;
     }
-
-    private void Update()
+    void Update()
     {
-        Move();
-    }
-
-    private void Move()
-    {
-        if (waypointIndex <= waypoints.Length - 1)
+        if (transform.position != points[current].position) 
         {
-            transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
-
-            if (transform.position == waypoints[waypointIndex].transform.position)
-            {
-                waypointIndex += 1;
-            }
+            transform.position = Vector3.MoveTowards(transform.position, points[current].position, speed * Time.deltaTime);
         }
+        else
+            current = (current + 1) % points.Length;
     }
 }
