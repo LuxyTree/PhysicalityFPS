@@ -12,6 +12,6 @@ public class EnemyChasePlayer : MonoBehaviour
     void Update()
     {
         transform.LookAt(target);
-        transform.Translate(Vector3.forward*5*Time.deltaTime);
+        transform.Translate(Vector3.forward*8*Time.deltaTime);
     }
 }

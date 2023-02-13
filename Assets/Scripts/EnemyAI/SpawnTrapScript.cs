@@ -17,7 +17,7 @@ public class SpawnTrapScript : MonoBehaviour
     {
         if (Time.time > nextSpawn)
         {
-            whatToSpawn = Random.Range(1, 6);
+            whatToSpawn = Random.Range(1, 3);
             //Debug.Log(whatToSpawn);
 
             switch (whatToSpawn)

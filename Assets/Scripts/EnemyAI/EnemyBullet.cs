@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public float life = 3;
+    //public float life = 6;
 
-    void Awake()
-    {
-        Destroy(gameObject, life);
-    }
+    //void Awake()
+    //{
+    //    Destroy(gameObject, life);
+    //}
 
     void OnCollisionEnter(Collision collision)
     {
@@ -18,6 +18,11 @@ public class EnemyBullet : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("Player Shot");
+        }
+
+        if (collision.gameObject.tag == "Untagged")
+        {
+            Destroy(gameObject);
         }
     }
 }
