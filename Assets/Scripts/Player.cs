@@ -20,9 +20,24 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKey(KeyCode.I))
+        {
+            SceneManager.LoadScene("Tutorial Level");
+        }
+
+        if (Input.GetKey(KeyCode.O))
+        {
+            SceneManager.LoadScene("MEDLevel");
+        }
+
+        if (Input.GetKey(KeyCode.P))
+        {
+            SceneManager.LoadScene("HARDLevel");
+        }
+
         if (currentHealth <= 0)
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("Tutorial Level");
         }
     }
 
