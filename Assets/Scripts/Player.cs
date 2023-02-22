@@ -35,6 +35,11 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene("HARDLevel");
         }
 
+        if (Input.GetKey(KeyCode.X))
+        {
+            Application.Quit();
+        }
+
         if (currentHealth <= 0)
         {
             SceneManager.LoadScene("Tutorial Level");
