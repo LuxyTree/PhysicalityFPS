@@ -3120,7 +3120,7 @@ MonoBehaviour:
   redBulletPrefab: {fileID: 6766281694770044483, guid: 71544177e79134a4f8569eed701ad18d, type: 3}
   blueBulletPrefab: {fileID: 7181074319820686460, guid: 3acc3ba25b1f0f44da61a871d6bed179, type: 3}
   bulletSpeed: 50
-  redTime: 3
+  redTime: 5
   blueTime: 3
   IndicatorLeft: {fileID: 1321701799}
   IndicatorDown: {fileID: 1336859552}

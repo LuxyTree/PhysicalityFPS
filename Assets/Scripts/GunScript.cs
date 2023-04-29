@@ -68,10 +68,23 @@ public class GunScript : MonoBehaviour
         if (Input.GetKey(KeyCode.A) && (Input.GetButtonDown("Fire1") && redcooldown == false))
         {
             redcooldown = true;
-            InvokeRepeating("LaunchProjectile", 0f, 0.1f);
+            StartCoroutine(LaunchMultiple(5));
             IndicatorLeft.SetActive(false);
         }
     }
+
+    private IEnumerator LaunchMultiple(int numLaunched)
+    {
+        var timesRepeated = 0;
+
+        while (timesRepeated < numLaunched)
+        {
+            LaunchProjectile();
+            timesRepeated++;
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
     void LaunchProjectile()
     {
         var bullet = Instantiate(redBulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
