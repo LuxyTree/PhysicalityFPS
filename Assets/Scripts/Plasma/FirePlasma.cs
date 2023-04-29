@@ -29,8 +29,8 @@ public class FirePlasma : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.S) && (Input.GetButtonDown("Fire1")))
         {
-            var bullet = Instantiate(greenBulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-            bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+            //var bullet = Instantiate(greenBulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            //bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
             chargeTime = 0;
         } else if (Input.GetButtonUp("Fire1") && chargeTime >=2) 
         {
