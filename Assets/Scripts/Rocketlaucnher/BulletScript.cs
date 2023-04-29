@@ -22,14 +22,14 @@ public class BulletScript : MonoBehaviour
             var bullet = Instantiate(explosion, BlueBullet.position, BlueBullet.rotation);
             Destroy(collision.gameObject);
             Destroy(gameObject);
-            Debug.Log("Detected Collision");
+            //Debug.Log("Detected Collision");
         }
         if (collision.gameObject.tag == "Terrain")
         {
             //Destroy(collision.gameObject);
             Destroy(gameObject);
             var bullet = Instantiate(explosion, BlueBullet.position, BlueBullet.rotation);
-            Debug.Log("Detected Collision");
+            //Debug.Log("Detected Collision");
         }
     }
 }

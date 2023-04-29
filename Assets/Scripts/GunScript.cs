@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,12 +9,19 @@ public class GunScript : MonoBehaviour
     //Weapon
     public Transform bulletSpawnPoint;
     public GameObject redBulletPrefab;
-    public GameObject greenBulletPrefab;
+    //public GameObject greenBulletPrefab;
     public GameObject blueBulletPrefab;
     public float bulletSpeed = 10;
     public float redTime = 3;
-    public float greenTime = 3;
+    //public float greenTime = 3;
     public float blueTime = 3;
+
+    ////Chargeshot
+    //[SerializeField] private GameObject chargedProjectile;
+    //[SerializeField] private float chargeSpeed;
+    //[SerializeField] private float chargetime;
+    //private bool isCharging;
+
     //Cooldown
     bool redcooldown = false;
 
@@ -37,14 +45,14 @@ public class GunScript : MonoBehaviour
             IndicatorLeft.SetActive(true);
         }
 
-        GreenShot();
-        greenTime -= Time.deltaTime;
-        if (greenTime < 0)
-        {
-            greencooldown = false;
-            greenTime = 3;
-            IndicatorDown.SetActive(true);
-        }
+        //GreenShot();
+        //greenTime -= Time.deltaTime;
+        //if (greenTime < 0)
+        //{
+        //    greencooldown = false;
+        //    greenTime = 3;
+        //    IndicatorDown.SetActive(true);
+        //}
 
         BlueShot();
         blueTime -= Time.deltaTime;
@@ -65,16 +73,35 @@ public class GunScript : MonoBehaviour
             IndicatorLeft.SetActive(false);
         }
     }
-    void GreenShot()
-    {
-        if (Input.GetKey(KeyCode.S) && (Input.GetButtonDown("Fire1") && greencooldown == false))
-        {
-            greencooldown = true;
-            var bullet = Instantiate(greenBulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-            bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
-            IndicatorDown.SetActive(false);
-        }
-    }
+    //void GreenShot()
+    //{
+    //    if (Input.GetKey(KeyCode.S) && chargetime <2 && (Input.GetKey("Fire1")))
+    //    {
+    //        IndicatorDown.SetActive(false);
+    //        //greencooldown = true;
+    //        isCharging = true;
+    //        if(isCharging == true) 
+    //        {
+    //            chargetime += Time.deltaTime * chargeSpeed;
+    //        }
+    //    if (Input.GetButtonDown("Fire1"))
+    //        {
+    //            var bullet = Instantiate(greenBulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+    //            //chargetime = 0;
+    //        } else if (Input.GetButtonUp("Fire1") && chargetime >= 2)
+    //        {
+    //            ReleaseCharge();
+    //        }
+    //    }
+    //}
+
+    //void ReleaseCharge()
+    //{
+    //    var bullet = Instantiate(greenBulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+    //    bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+    //    isCharging = false;
+    //    chargetime = 0;
+    //}
     void BlueShot()
     {
         if (Input.GetKey(KeyCode.D) && (Input.GetButtonDown("Fire1") && bluecooldown == false))
