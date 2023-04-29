@@ -12,7 +12,7 @@ public class GunScript : MonoBehaviour
     //public GameObject greenBulletPrefab;
     public GameObject blueBulletPrefab;
     public float bulletSpeed = 10;
-    public float redTime = 3;
+    public float redTime = 5;
     //public float greenTime = 3;
     public float blueTime = 3;
 
@@ -68,10 +68,14 @@ public class GunScript : MonoBehaviour
         if (Input.GetKey(KeyCode.A) && (Input.GetButtonDown("Fire1") && redcooldown == false))
         {
             redcooldown = true;
-            var bullet = Instantiate(redBulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-            bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+            InvokeRepeating("LaunchProjectile", 0f, 0.1f);
             IndicatorLeft.SetActive(false);
         }
+    }
+    void LaunchProjectile()
+    {
+        var bullet = Instantiate(redBulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
     }
     //void GreenShot()
     //{
