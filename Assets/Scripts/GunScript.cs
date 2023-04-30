@@ -41,7 +41,7 @@ public class GunScript : MonoBehaviour
         if (redTime < 0)
         {
             redcooldown= false;
-            redTime= 3;
+
             IndicatorLeft.SetActive(true);
         }
 
@@ -59,7 +59,7 @@ public class GunScript : MonoBehaviour
         if (blueTime < 0)
         {
             bluecooldown = false;
-            blueTime = 3;
+
             IndicatorRight.SetActive(true);
         }
     }
@@ -68,8 +68,9 @@ public class GunScript : MonoBehaviour
         if (Input.GetKey(KeyCode.A) && (Input.GetButtonDown("Fire1") && redcooldown == false))
         {
             redcooldown = true;
-            StartCoroutine(LaunchMultiple(5));
+            StartCoroutine(LaunchMultiple(3));
             IndicatorLeft.SetActive(false);
+            redTime = 5;
         }
     }
 
@@ -127,6 +128,7 @@ public class GunScript : MonoBehaviour
             var bullet = Instantiate(blueBulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
             IndicatorRight.SetActive(false);
+            blueTime = 3;
         }
     }
 
