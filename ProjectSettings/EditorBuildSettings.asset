@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial Level.unity
     guid: fc15d795fc67c014c952bf163d217290
   - enabled: 1
-    path: Assets/Scenes/MEDLevel.unity
+    path: Assets/Scenes/Old Scenes/MEDLevel.unity
     guid: 3bc5f40415847244b976e5d781af5e6f
   - enabled: 1
-    path: Assets/Scenes/HARDLevel.unity
+    path: Assets/Scenes/Old Scenes/HARDLevel.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
