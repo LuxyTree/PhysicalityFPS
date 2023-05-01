@@ -27,12 +27,12 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.O))
         {
-            SceneManager.LoadScene("MEDLevel");
+            SceneManager.LoadScene("Level1");
         }
 
         if (Input.GetKey(KeyCode.P))
         {
-            SceneManager.LoadScene("HARDLevel");
+            SceneManager.LoadScene("Level2");
         }
 
         if (Input.GetKey(KeyCode.X))
